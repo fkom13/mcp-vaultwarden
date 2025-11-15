@@ -1,0 +1,19 @@
+{
+  "name": "mcp-vaultwarden",
+  "version": "1.0.0",
+  "description": "MCP pour interagir avec Vaultwarden via la CLI Bitwarden.",
+  "main": "server.js",
+  "type": "module",
+
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.18.2",
+    "dotenv": "^17.2.2"
+  }
+}
