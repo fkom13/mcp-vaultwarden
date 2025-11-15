@@ -1,6 +1,6 @@
 {
   "name": "mcp-vaultwarden-server",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "MCP pour interagir avec Vaultwarden via la CLI Bitwarden.",
   "main": "server.js",
   "type": "module",
