@@ -1,17 +1,26 @@
 {
-  "name": "mcp-vaultwarden",
+  "name": "mcp-vaultwarden-server",
   "version": "1.0.0",
   "description": "MCP pour interagir avec Vaultwarden via la CLI Bitwarden.",
   "main": "server.js",
   "type": "module",
-
   "scripts": {
     "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fkom13/mcp-vaultwarden.git"
+  },
+  "keywords": [
+    "mcp",
+    "vaultwarden",
+    "bitwarden",
+    "secrets-manager",
+    "ai-agent"
+  ],
+  "author": "fkom13 <geminiEA@mail.com>",
+  "license": "MIT",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.18.2",
     "dotenv": "^17.2.2"
