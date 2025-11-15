@@ -62,7 +62,7 @@ Configurez votre client pour qu'il lance le serveur via `npx` :
 
 1.  **Clonez le dépôt :**
     ```bash
-    git clone https://github.com/VOTRE_NOM/mcp-vaultwarden.git
+    git clone https://github.com/fkom13/mcp-vaultwarden.git
     cd mcp-vaultwarden
     ```
 
@@ -146,7 +146,7 @@ Crée un nouvel élément. Utilisez d'abord `get_secret_template`.
 {
   "tool": "create_secret",
   "arguments": {
-    "item_json": "{\"type\":1,\"name\":\"Mon Nouveau Login\",\"notes\":\"Ceci est une note secrète.\",\"favorite\":false,\"login\":{\"username\":\"monuser\",\"password\":\"MonP@ssw0rd!\",\"uris\":[{\"uri\":\"https://example.com\"}]}}"
+    "item_json": "{\\\"type\\\":1,\\\"name\\\":\\\"Mon Nouveau Login\\\",\\\"notes\\\":\\\"Ceci est une note secrète.\\\",\\\"favorite\\\":false,\\\"login\\\":{\\\"username\\\":\\\"monuser\\\",\\\"password\\\":\\\"MonP@ssw0rd!\\\",\\\"uris\\\":[{\\\"uri\\\":\\\"https://example.com\\\"}]}}"
   }
 }
 ```
@@ -160,7 +160,7 @@ Met à jour un secret existant par son ID.
   "tool": "update_secret",
   "arguments": {
     "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-    "item_json": "{\"name\":\"Ancien Login (Mis à jour)\"}"
+    "item_json": "{\\\"name\\\":\\\"Ancien Login (Mis à jour)\\\"}"
   }
 }
 ```
@@ -190,9 +190,7 @@ Force la synchronisation du coffre local avec le serveur distant.
 ---
 
 ## 🤝 Contribution
-
 Les contributions sont les bienvenues ! N'hésitez pas à forker le projet et à ouvrir une Pull Request.
 
 ## 📝 Licence
-
 MIT
