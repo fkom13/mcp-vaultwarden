@@ -16,7 +16,7 @@ let isUnlocking = false;
 const getMasterPassword = () => {
     const masterPassword = process.env.BW_MASTER_PASSWORD;
     if (!masterPassword) {
-        throw new Error("La variable d\'environnement BW_MASTER_PASSWORD n\'est pas définie.");
+        throw new Error("La variable d\\'environnement BW_MASTER_PASSWORD n\\'est pas définie.");
     }
     return masterPassword;
 };
@@ -57,7 +57,7 @@ const get_secret = {
     title: "Récupérer un secret",
     description: "Récupère les détails d'un secret par son nom ou son ID. Le déverrouillage est automatique.",
     schema: z.object({
-        name: z.string().describe("Le nom ou l\'ID du secret à récupérer."),
+        name: z.string().describe("Le nom ou l\\'ID du secret à récupérer."),
     }),
     execute: async (params) => {
         const sessionKey = await _getSessionKey();
@@ -87,7 +87,7 @@ const create_secret = {
     title: "Créer un secret",
     description: "Crée un nouvel élément dans le coffre-fort. Le déverrouillage est automatique. Il est fortement recommandé d'utiliser l'outil 'get_secret_template' pour obtenir la structure JSON correcte.",
     schema: z.object({
-        item_json: z.string().describe("L\'objet de l\'élément à créer, au format JSON."),
+        item_json: z.string().describe("L\\'objet de l\\'élément à créer, au format JSON."),
     }),
     execute: async (params) => {
         const sessionKey = await _getSessionKey();
@@ -95,7 +95,7 @@ const create_secret = {
         const command = `echo '${encodedItem}' | base64 -d | bw encode | bw create item --session "${sessionKey}"`;
         const { stdout, stderr } = await execAsync(command, { timeout: TIMEOUT });
         if (stderr) throw new Error(`Erreur lors de la création: ${stderr}`);
-        return JSON.JSON.parse(stdout);
+        return JSON.parse(stdout);
     }
 };
 
@@ -103,8 +103,8 @@ const update_secret = {
     title: "Mettre à jour un secret",
     description: "Met à jour un élément existant. Le déverrouillage est automatique.",
     schema: z.object({
-        id: z.string().describe("L\'ID de l\'élément à mettre à jour."),
-        item_json: z.string().describe("L\'objet de l\'élément mis à jour, au format JSON."),
+        id: z.string().describe("L\\'ID de l\\'élément à mettre à jour."),
+        item_json: z.string().describe("L\\'objet de l\\'élément mis à jour, au format JSON."),
     }),
     execute: async (params) => {
         const sessionKey = await _getSessionKey();
@@ -120,7 +120,7 @@ const delete_secret = {
     title: "Supprimer un secret",
     description: "Supprime un élément du coffre-fort. Le déverrouillage est automatique.",
     schema: z.object({
-        id: z.string().describe("L\'ID de l\'élément à supprimer."),
+        id: z.string().describe("L\\'ID de l\\'élément à supprimer."),
     }),
     execute: async (params) => {
         const sessionKey = await _getSessionKey();
@@ -140,7 +140,7 @@ const get_secret_template = {
     execute: async (params) => {
         const templates = {
             login: {
-                name: "Nom de l\'élément",
+                name: "Nom de l\\'élément",
                 type: 1,
                 login: {
                     uris: [{ match: null, uri: "https://example.com" }],
@@ -169,7 +169,7 @@ const get_secret_template = {
                 }
             },
             identity: {
-                name: "Nom de l\'identité",
+                name: "Nom de l\\'identité",
                 type: 4,
                 identity: {
                     title: "",
